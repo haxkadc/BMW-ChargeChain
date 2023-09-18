@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pannello Amministrazione</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+            $('.modal').closeModal();
+        });
+
+    </script>
+
+    <style>
+        * {
+            font-family: "courier new"
+        }
+
+        .parallax-container {
+
+            height: "100%";
+        }
+
+        input {
+            font-size: 20px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+
+    <script>
+
+        $(document).ready(function () {
+            $('.parallax').parallax();
+        });
+
+    </script>
+    <style>
+        .modal {
+            max-height: 100%;
+            overflow: visible
+        }
+    </style>
+</head>
+
+<body bgcolor="black">
+
+
+    <div style="background:black; border:1px solid gray;padding:5px"class="center-align">
+        <h4 class="!"><b><font color="white" bgcolor="black" >BMW CHARGE CHAIN</font></b></h4>
+
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="https://cdn.dicklovett.co.uk/uploads/asset_image/2_2421.png"></div>
+
+        <div class="row">
+            <br />
+            <br />
+            <div class="center-align col s4">
+                <a class="blue-text text-darken-2 white waves-effect waves-light btn" href="#id02"><i
+                        class="material-icons left">add</i>Aggiungi colonnina</a>
+            </div>
+            
+            <form action="http://54.247.62.67:5000/listCol" method="POST">
+
+                    <button
+                        class="blue-text text-darken-2 white waves-effect waves-light btn btn waves-effect waves-light"
+                        type="submit" name="action">Lista delle colonnine
+                        <i class="material-icons right">list</i>
+                    </button>
+                </form>
+            </div>
+        
+        <div class="row">
+           
+            <div class="center-align col s4">
+                <a class="blue-text text-darken-2 white waves-effect waves-light btn" href="#id03"><i
+                        class="material-icons left">remove</i>Rimuovi  colonnina</a>
+            
+
+            </div>
+            <div class="center-align col s2">
+                <a class="blue-text text-darken-2 white waves-effect waves-light btn" href="#id01"><i
+                        class="material-icons left">add</i>Noleggia</a>
+
+
+            </div>
+            <div class="center-align col s2">
+                <a class="blue-text text-darken-2 white waves-effect waves-light btn" href="#id05"><i
+                        class="material-icons left">remove</i>Disdici</a>
+
+
+            </div>
+        </div>
+        
+            
+        </div>
+
+        <a class="modal-trigger" href="#id05"></a>
+        <div id="id05" class="modal" style="width:50%;height:30%">
+
+            <div class="container">
+                <br />
+
+                <form action="http://54.247.62.67:5000/cancel" method="POST">
+
+                    <h6><b>Disdici <b>
+                                <input required = "true" type="text" name="id" placeholder="Inserisci l'id per la colonna che vuoi disdire " /></h6>
+                    <button
+                        class="blue-text text-darken-2 white waves-effect waves-light btn btn waves-effect waves-light"
+                        type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"
+                        onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal"
+                        target="_self">Close</a>
+
+                </form>
+            </div>
+        </div>
+
+        <a class="modal-trigger" href="#id01"></a>
+        <div id="id01" class="modal" style="width:50%;height:30%">
+
+            <div class="container">
+                <br />
+
+                <form action="http://54.247.62.67:5000/rent" method="POST">
+
+                    <h6><b>Noleggia <b>
+                                <input required = "true" type="text" name="id" placeholder="Inserisci l'id per la colonna che vuoi noleggiare " /></h6>
+                    <button
+                        class="blue-text text-darken-2 white waves-effect waves-light btn btn waves-effect waves-light"
+                        type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"
+                        onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
+                        target="_self">Close</a>
+
+                </form>
+            </div>
+        </div>
+
+        <a class="modal-trigger" href="#id02"></a>
+        <div id="id02" class="modal" style="width:50%;height:90%">
+
+            <div class="container">
+                <br />
+
+                <form action="http://54.247.62.67:5000/addColonnina" method="POST">
+                    <h6><b>Nome Colonnina<b>
+                                <input required = "true" type="text" name="nome" placeholder="Inserisci il nome della Colonnina" />
+				<b>Città<b>
+				<input required = "true" type="text" name= "citta" placeholder= "Inserisci la citta"/>
+				<b>Indirizzo<b>
+				<input required = "true" type="text" name= "indirizzo" placeholder= "Inserisci indirizzo"/>
+				<b>Fornitore<b>
+				<input required = "true" type="text" name= "fornitore" placeholder= "Inserisci fornitore"/>
+				<b>Fee<b>
+				<input required = "true" type="text" name= "fee" placeholder = "Inserisci le fee"/>
+				<b>ID<b>
+				<input required = "true" type="text" name= "id" placeholder = "Inserisci l'ID"/>
+</h6>
+
+                    <button
+                        class="blue-text text-darken-2 white waves-effect waves-light btn btn waves-effect waves-light"
+                        type="submit" name="action">Invia
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"
+                        onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
+                        target="_self">Chiudi</a>
+
+                </form>
+            </div>
+        </div>
+        <a class="modal-trigger" href="#id03"></a>
+        <div id="id03" class="modal" style="width:50%;height:30%">
+            <div class="container">
+                <br />
+
+                <form action="http://54.247.62.67:5000/removeCol" method="POST">
+                    <h6><b>ID Colonna<b>
+                                <input required = "true" type="text" name="id" placeholder="Inserisci l'id della colonna che vuoi rimuovere" /></h6>
+
+                    <button
+                        class="blue-text text-darken-2 white waves-effect waves-light btn btn waves-effect waves-light"
+                        type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"
+                        onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal"
+                        target="_self">Close</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="background:black; border:1px solid gray;padding:5px"class="center-align">
+        <h4 class="!"><b><font color="white" bgcolor="black" >PANNELLO AMMINISTRATORE</font></b></h4>
+
+    </div>
+    
+    
+<div style="padding:25px" class="center-align">
+<img  src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg"  width="250" height="250">
+<img  src="https://bb-clients-techsquare-prod.s3.amazonaws.com/redactor_assets/pictures/4/4/bmw_i_electrified_x3lcc100p0cxpng_x1.png" width="1050" height="250">
+</div>
+</body>
+
+</html>
+

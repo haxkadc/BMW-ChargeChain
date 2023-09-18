@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </head>
+        
+    <body bgcolor="black" background="https://mediapool.bmwgroup.com/cache/P9/201409/P90164548/P90164548-bmw-i-wallbox-pure-l--bmw-i-wallbox-pro-r--09-2014-1920px.jpg"">
+
+   	  <div style="background:black; border:1px solid gray;padding:5px"class="center-align">
+   	  <center>
+        	<h4 class="!"><b><font color="white" bgcolor="black" >LISTA COLONNINE INSERITE</font></b></h4>
+	</center>
+	
+  	  </div>
+
+    <script type="text/javascript">
+   
+
+   
+    var result = '{{command}}';
+    if (result.includes(","))
+    {
+    	
+        var list =  result.split("-")
+        table = document.createElement("table");
+
+        for(i=0;i<list.length;i++)
+        {
+
+            var rs =  list[i].split(",")
+            for(j=0;j<rs.length;j++)
+            {
+                console.log(rs[j]);
+                if (rs[j] == "true")
+                {
+                    rs[j] = "Disponibile";
+                }
+                if (rs[j] == "false")
+                {
+                    rs[j] = "Noleggiata";
+                }
+            }
+            tr = document.createElement("tr");
+            td = document.createElement("td");
+            
+
+            a = document.createTextNode(rs);
+	       
+
+	    td.style.color = "white";
+            td.style.background ="grey";
+            td.style.padding ="20px";
+
+            td.appendChild(a);
+            tr.appendChild(td);
+            table.style.padding ="5px"
+            table.appendChild(tr);
+            
+            table.style.background ="white";
+        }
+        document.body.appendChild(table)
+        console.log(typeof(a));
+
+    }
+    else
+    {
+        window.alert('{{command}}');
+        window.location.href = "http://54.247.62.67:"+'{{port}}';
+
+    }
+	
+    </script>
+           
+    </div>
+    </body>
+</html>

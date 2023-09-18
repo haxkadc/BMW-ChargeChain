@@ -1,0 +1,4 @@
+sudo docker-compose -f docker-compose.yaml  down
+sudo docker-compose -f docker-compose.yaml  up
+docker exec -it chargechain-client bash
+
