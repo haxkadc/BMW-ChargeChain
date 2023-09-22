@@ -26,6 +26,7 @@ This is a blockchain project based on Hyperledger Fabric and Hyperledger Sawtoot
 <img src="https://img.shields.io/badge/hyperledger-2F3134?style=for-the-badge&logo=hyperledger&logoColor=white" />
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" /> 
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> 
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" /> 
@@ -35,4 +36,32 @@ This is a blockchain project based on Hyperledger Fabric and Hyperledger Sawtoot
 ##
 ### Getting Started
 
+**Run the script.sh**
+<pre>  script.sh </pre>
 
+<p></p>
+
+**Run script admin.go**
+<pre>  admin.go</pre>
+  
+<p></p>
+
+**Connection to AWS server**
+<pre> ssh -i "provaCertificato.pem" ubuntu @ec2-54-247-62-67.eu-west-1.compute.amazonaws.com</pre>
+
+<p></p>
+
+**Launching  isolated execution in the Docker**
+<pre> sudo docker -compose f docker -compose.yaml up</pre>
+<p></p>
+
+**Launching  isolated execution in the Docker's client bash**
+<pre> sudo docker exec -it f chargechain-client bash</pre>
+<p></p>
+
+**Launching the Admin client**
+<pre> python3 admin.py</pre>
+<p></p>
+
+**Launching the Driver client**
+<pre> python3 driver.py </pre>
